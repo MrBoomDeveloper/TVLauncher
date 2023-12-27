@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="my_account">Мой Аккаунт</string>
+    <string name="for_you">Для вас</string>
+    <string name="search">Поиск</string>
+    <string name="apps">Приложения</string>
+    <string name="settings">Настройки</string>
+</resources>

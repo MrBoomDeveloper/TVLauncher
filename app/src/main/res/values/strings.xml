@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name" translatable="false">TV Launcher</string>
+
+    <string name="my_account">My Account</string>
+    <string name="for_you">For you</string>
+    <string name="apps">Apps</string>
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
+</resources>
