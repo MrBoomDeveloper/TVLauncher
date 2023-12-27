@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#050505"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/hero_banner"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_banner" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/hero_banner"
+                android:scaleType="fitXY"
+                android:tint="#050505"
+                android:src="@drawable/vignette_hero" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="38sp"
+                    android:id="@+id/title"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#ffffff"
+                    android:text="Movie Title" />
+
+                <TextView
+                    android:layout_width="275dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="30dp"
+                    android:lineSpacingExtra="2sp"
+                    android:layout_marginBottom="16dp"
+                    android:id="@+id/description"
+                    android:textColor="#CDCCD3"
+                    android:text="A pretty epic movie about super anime girls from your favourite studio!" />
+
+                <requestFocus />
+
+                <Button
+                    style="@style/CircleWhiteButton"
+                    android:id="@+id/watch"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginBottom="40dp"
+                    android:text="Watch now" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:background="@drawable/button_circle_background"
+                android:id="@+id/account_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:longClickable="true"
+                android:layout_marginLeft="16dp"
+                android:padding="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/my_account"
+                android:src="@drawable/ic_account_white" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:background="@drawable/button_circle_background"
+                android:id="@+id/search_icon"
+                android:longClickable="true"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:padding="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/search"
+                android:src="@drawable/ic_search_white" />
+
+            <ImageView
+                android:background="@drawable/button_circle_background"
+                android:id="@+id/settings_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:longClickable="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:padding="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/settings"
+                android:src="@drawable/ic_settings_white" />
+
+        </LinearLayout>
+
+        <com.mrboomdev.tvlauncher.ui.layout.category.CategoriesLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="425dp" />
+
+    </FrameLayout>
+
+</androidx.core.widget.NestedScrollView>

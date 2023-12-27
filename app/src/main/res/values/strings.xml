@@ -2,6 +2,7 @@
     <string name="app_name" translatable="false">TV Launcher</string>
 
     <string name="my_account">My Account</string>
+    <string name="hero_banner">Recommended Banner</string>
     <string name="for_you">For you</string>
     <string name="apps">Apps</string>
     <string name="search">Search</string>

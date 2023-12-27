@@ -30,5 +30,4 @@ android {
 dependencies {
     implementation 'androidx.palette:palette:1.0.0'
     implementation 'androidx.leanback:leanback:1.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }

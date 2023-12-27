@@ -2,6 +2,7 @@
 <resources>
     <string name="my_account">Мой Аккаунт</string>
     <string name="for_you">Для вас</string>
+    <string name="hero_banner">Рекомендованный Баннер</string>
     <string name="search">Поиск</string>
     <string name="apps">Приложения</string>
     <string name="settings">Настройки</string>
