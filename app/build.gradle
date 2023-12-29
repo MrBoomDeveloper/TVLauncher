@@ -12,6 +12,10 @@ android {
         targetSdk 34
         versionCode 1
         versionName "1.0"
+
+        buildFeatures {
+            buildConfig = true
+        }
     }
 
     buildTypes {
@@ -30,4 +34,5 @@ android {
 dependencies {
     implementation 'androidx.palette:palette:1.0.0'
     implementation 'androidx.leanback:leanback:1.0.0'
+    implementation 'com.github.SabriGhazali:Shadout-Android:1.0.2'
 }

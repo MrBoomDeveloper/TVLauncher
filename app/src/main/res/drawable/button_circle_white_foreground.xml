@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_focused="true">
-        <ripple
-            android:color="#88000000"
-            android:radius="1000dp" />
-    </item>
-
-    <item android:state_pressed="true">
-        <ripple
-            android:color="#88000000"
-            android:radius="1000dp" />>
-    </item>
-</selector>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#88000000"
+    android:radius="1000dp" />
