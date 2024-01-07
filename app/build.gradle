@@ -20,8 +20,9 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
 
@@ -34,5 +35,4 @@ android {
 dependencies {
     implementation 'androidx.palette:palette:1.0.0'
     implementation 'androidx.leanback:leanback:1.0.0'
-    implementation 'com.github.SabriGhazali:Shadout-Android:1.0.2'
 }

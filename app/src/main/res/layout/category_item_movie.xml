@@ -7,26 +7,36 @@
     android:clickable="true"
     android:focusable="true"
     android:layout_height="wrap_content"
-    tools:background="#ffffff"
-    android:clipChildren="false">
+    tools:background="#ffffff">
 
-    <com.github.sablasvegas.shadout.Shadout
-        android:id="@+id/category_item_glow"
+    <LinearLayout
+        android:id="@+id/category_item_shadow_holder"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:shadowColor="#ff0000"
-        app:shadowRadius="20dp">
+        android:layout_height="166dp"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/category_item_image"
-            android:layout_width="260dp"
-            android:layout_height="135dp"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/ic_banner"
-            android:background="#000000"
-            android:importantForAccessibility="no" />
+        <com.mrboomdev.tvlauncher.ui.view.ShadowView
+            android:id="@+id/category_item_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:shadowColor="#ff0000"
+            app:shadowWidth="25dp" />
 
-    </com.github.sablasvegas.shadout.Shadout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/category_item_image"
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="260dp"
+        android:layout_height="135dp"
+
+        tools:tag="(150 - 16 * 2)dp"
+        android:layout_marginTop="-150dp"
+
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_banner"
+        android:background="#000000"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/category_item_title"
@@ -36,7 +46,7 @@
         android:text="@string/app_name"
         android:textColor="#ffffff"
         android:textSize="16sp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
         tools:textColor="#000000" />
 
 </LinearLayout>

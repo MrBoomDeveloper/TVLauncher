@@ -21,6 +21,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:reverseLayout="false"
-        android:clipChildren="false"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 </LinearLayout>

@@ -1,6 +1,8 @@
 package com.mrboomdev.tvlauncher.ui.layout.category;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
+import android.transition.TransitionManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -10,13 +12,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.github.sablasvegas.shadout.Shadout;
 import com.mrboomdev.tvlauncher.R;
 import com.mrboomdev.tvlauncher.managers.AppManager;
 import com.mrboomdev.tvlauncher.managers.DrawableManager;
+import com.mrboomdev.tvlauncher.ui.view.ShadowView;
 
 @SuppressLint("InflateParams")
 public class CategoryLayout {
+	private static final int WHITE_GLOW_COLOR = Color.parseColor("#55ffffff");
 	private final TextView title;
 	private final CategoryViewHolder categoryViewHolder;
 	private Category category;
@@ -78,17 +81,25 @@ public class CategoryLayout {
 
 	private static class ViewHolder<T extends ViewGroup> extends RecyclerView.ViewHolder {
 		private final TextView title;
-		private final Shadout glow;
+		private final ShadowView shadow;
 		private final ImageView image;
-		private final View view;
+		private final ViewGroup view, shadowHolder;
 
 		public ViewHolder(T view) {
 			super(view);
 
 			this.view = view;
 			this.title = view.findViewById(R.id.category_item_title);
-			this.glow = view.findViewById(R.id.category_item_glow);
+			this.shadow = view.findViewById(R.id.category_item_shadow);
+			this.shadowHolder = view.findViewById(R.id.category_item_shadow_holder);
 			this.image = view.findViewById(R.id.category_item_image);
+
+			view.setOnFocusChangeListener((_view, isFocused) -> {
+				TransitionManager.beginDelayedTransition(shadowHolder);
+				var scale = isFocused ? 1 : .5f;
+				shadow.setScaleX(scale);
+				shadow.setScaleY(scale);
+			});
 		}
 
 		public void setItem(@NonNull Category.Item item) {
@@ -99,11 +110,11 @@ public class CategoryLayout {
 
 			if(drawable != null) {
 				var palette = DrawableManager.getDrawablePalette(drawable);
-				var glowColor = palette.getDominantColor(-1);
+				var glowColor = palette.getDominantColor(WHITE_GLOW_COLOR);
 
 				image.setImageDrawable(drawable);
 				image.setBackgroundColor(glowColor);
-				glow.setMShadowColor(glowColor);
+				shadow.setColor(glowColor);
 			}
 		}
 	}
